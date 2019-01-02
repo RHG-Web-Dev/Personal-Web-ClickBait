@@ -31,6 +31,7 @@
 	<br><span id="userCont"></span>
 	<br><span id="userCoun"></span>
 	<br><span id="userCity"></span>
+	<br><span id="userZip"></span>
 	<br><br><span id="userLat"></span>
 	<br><span id="userLon"></span>
 	<br><!-- <br>Total Acuracy: <span id="userAct">N/A</span> -->
@@ -45,6 +46,7 @@ UserInfo.getInfo(function(data) {
   document.getElementById("userCont").innerHTML = 'Your Continent: ' + data.continent.name
   document.getElementById("userCoun").innerHTML = 'Your Country: ' + data.country.name
   document.getElementById("userCity").innerHTML = 'Your City: ' + data.city.name
+  document.getElementById("userZip").innerHTML = 'Your ZIP Code: ' + data.city.code
   document.getElementById("userLat").innerHTML = 'Latitude: ' + data.position.latitude
   document.getElementById("userLon").innerHTML = 'Longitude: ' + data.position.longitude
   //document.getElementById("userAct").innerHTML = data.position.accuracy + ' km'
