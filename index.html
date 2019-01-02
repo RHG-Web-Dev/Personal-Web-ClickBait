@@ -18,32 +18,37 @@
   <style>
 	body {background-color: black !important; color: white !important;}
 	h1   {color: red;}
+	h2   {color: green;}
 	p    {color: red;}
   </style>
 </head>
 </html>
 <body>
-	<h1>You've been clickbaited</h1><br>
-	<br>Your IP: <span id="userIP">N/A</span>
-	<br>Your Continent: <span id="userCont">N/A</span>
-	<br>Your Country: <span id="userCoun">N/A</span>
-	<br>Your City: <span id="userCity">N/A</span>
+	<h1><span id="headder"></span></h1>
+	<h2><span id="headder2">Welcome to the World's #1 clickbait site. 🙂</span></h2>
 	<br>
-	<br>Latitude: <span id="userLat">N/A</span>
-	<br>Longitude: <span id="userLon">N/A</span>
-	<br>
-	<!-- <br>Total Acuracy: <span id="userAct">N/A</span> -->
+	<br><span id="userIP"></span>
+	<br><span id="userCont"></span>
+	<br><span id="userCoun"></span>
+	<br><span id="userCity"></span>
+	<br><br><span id="userLat"></span>
+	<br><span id="userLon"></span>
+	<br><!-- <br>Total Acuracy: <span id="userAct">N/A</span> -->
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/userinfo/1.1.0/userinfo.min.js"></script>
 <script type="text/javascript">
 UserInfo.getInfo(function(data) {
-  document.getElementById("userIP").innerHTML = data.ip_address
-  document.getElementById("userCont").innerHTML = data.continent.name
-  document.getElementById("userCoun").innerHTML = data.country.name
-  document.getElementById("userCity").innerHTML = data.city.name
-  document.getElementById("userLat").innerHTML = data.position.latitude
-  document.getElementById("userLon").innerHTML = data.position.longitude
+	setTimeout(() => {
+  document.getElementById("headder").innerHTML = 'You\'ve been clickbaited! 🖱'
+  document.getElementById("headder2").innerHTML = ''
+  document.getElementById("userIP").innerHTML = 'Your IP: ' + data.ip_address
+  document.getElementById("userCont").innerHTML = 'Your Continent: <' + data.continent.name
+  document.getElementById("userCoun").innerHTML = 'Your Country: ' + data.country.name
+  document.getElementById("userCity").innerHTML = 'Your City: ' + data.city.name
+  document.getElementById("userLat").innerHTML = 'Latitude: ' + data.position.latitude
+  document.getElementById("userLon").innerHTML = 'Longitude: ' + data.position.longitude
   //document.getElementById("userAct").innerHTML = data.position.accuracy + ' km'
+  }, 3000)
 }, function(err) {
   // the "err" object contains useful information in case of an error
 });
