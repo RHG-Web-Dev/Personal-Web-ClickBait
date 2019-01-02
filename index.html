@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -16,15 +15,36 @@
   <meta property="og:image:height" content="256">
   
   <title>Clickbait</title>
+  <style>
+	body {background-color: black !important; color: white !important;}
+	h1   {color: red;}
+	p    {color: red;}
+  </style>
 </head>
-<body>
-   Clickbaited
-   \nYour IP: <span id="userIP">000.00.000.00</span>
-  </body>
 </html>
-
-<script>var useripvar = "Loading";</script>
-<script type="text/javascript" src="https://l2.io/ip.js?var=useripvar"></script>
-<script>
-document.getElementById("userIP").innerHTML = useripvar
+<body>
+	<h1>You've been clickbaited</h1><br>
+	<br>Your IP: <span id="userIP">N/A</span>
+	<br>Your Continent: <span id="userCont">N/A</span>
+	<br>Your Country: <span id="userCoun">N/A</span>
+	<br>Your City: <span id="userCity">N/A</span>
+	<br>
+	<br>Latitude: <span id="userLat">N/A</span>
+	<br>Longitude: <span id="userLon">N/A</span>
+	<br>
+	<!-- <br>Total Acuracy: <span id="userAct">N/A</span> -->
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/userinfo/1.1.0/userinfo.min.js"></script>
+<script type="text/javascript">
+UserInfo.getInfo(function(data) {
+  document.getElementById("userIP").innerHTML = data.ip_address
+  document.getElementById("userCont").innerHTML = data.continent.name
+  document.getElementById("userCoun").innerHTML = data.country.name
+  document.getElementById("userCity").innerHTML = data.city.name
+  document.getElementById("userLat").innerHTML = data.position.latitude
+  document.getElementById("userLon").innerHTML = data.position.longitude
+  //document.getElementById("userAct").innerHTML = data.position.accuracy + ' km'
+}, function(err) {
+  // the "err" object contains useful information in case of an error
+});
 </script>
