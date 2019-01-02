@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  
+  <!-- <meta http-equiv="refresh" content="60"> -->
+  <meta property="og:site_name" content="RHG#0822">
+  <meta name="title" content="Rusty R. Huskey">
+  <meta name="description" content="World's #1 clickbait site!">
+  <meta name="theme-color" content="#36393f">
+  <meta property="og:image" content="/favicon.ico">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="256">
+  <meta property="og:image:height" content="256">
+  
+  <title>Clickbait</title>
+</head>
+<body>
+   Clickbaited
+  </body>
+</html>
+
+<script>
+
+setInterval(function() {
+        var docTitle = document.title
+        var x = docTitle.length;
+        var ClearInterval = setInterval(function() {
+            document.title = docTitle.substring(0, x+1)
+            if (--x === 0) {
+                window.clearInterval(ClearInterval);
+            }
+        }, 1500 / docTitle.length);
+  window.setTimeout(function() {
+    var x = 0;
+    var SetInterval = setInterval(function() {
+    document.title = titleMessages[msgNum].substring(0, x+1)
+      if (++x === titleMessages[msgNum].length) {
+         window.clearInterval(SetInterval);
+      }
+    }, 1500 / titleMessages[msgNum].length);
+    msgNum++;
+    if (msgNum == titleMessages.length) msgNum = 0
+    console.log(msgNum, titleMessages.length);
+  }, 1500)
+}, 15000);
+</script>
