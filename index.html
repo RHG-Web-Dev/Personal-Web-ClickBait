@@ -7,7 +7,7 @@
   <!-- <meta http-equiv="refresh" content="60"> -->
   <meta property="og:site_name" content="RHG#0822">
   <meta name="title" content="Rusty R. Huskey">
-  <meta name="description" content="World's #1 clickbait site!">
+  <meta name="description" content="The World's #1 clickbait site! 🙂">
   <meta name="theme-color" content="#36393f">
   <meta property="og:image" content="/favicon.ico">
   <meta property="og:image:type" content="image/png">
@@ -42,7 +42,7 @@ UserInfo.getInfo(function(data) {
   document.getElementById("headder").innerHTML = 'You\'ve been clickbaited! 🖱'
   document.getElementById("headder2").innerHTML = ''
   document.getElementById("userIP").innerHTML = 'Your IP: ' + data.ip_address
-  document.getElementById("userCont").innerHTML = 'Your Continent: <' + data.continent.name
+  document.getElementById("userCont").innerHTML = 'Your Continent: ' + data.continent.name
   document.getElementById("userCoun").innerHTML = 'Your Country: ' + data.country.name
   document.getElementById("userCity").innerHTML = 'Your City: ' + data.city.name
   document.getElementById("userLat").innerHTML = 'Latitude: ' + data.position.latitude
