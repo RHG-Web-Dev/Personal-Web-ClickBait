@@ -19,31 +19,12 @@
 </head>
 <body>
    Clickbaited
+   Your IP: <span id="userIP">000.00.000.00</span>
   </body>
 </html>
 
+<script>var useripvar;</script>
+<script type="text/javascript" src="https://l2.io/ip.js?var=useripvar"></script>
 <script>
-
-setInterval(function() {
-        var docTitle = document.title
-        var x = docTitle.length;
-        var ClearInterval = setInterval(function() {
-            document.title = docTitle.substring(0, x+1)
-            if (--x === 0) {
-                window.clearInterval(ClearInterval);
-            }
-        }, 1500 / docTitle.length);
-  window.setTimeout(function() {
-    var x = 0;
-    var SetInterval = setInterval(function() {
-    document.title = titleMessages[msgNum].substring(0, x+1)
-      if (++x === titleMessages[msgNum].length) {
-         window.clearInterval(SetInterval);
-      }
-    }, 1500 / titleMessages[msgNum].length);
-    msgNum++;
-    if (msgNum == titleMessages.length) msgNum = 0
-    console.log(msgNum, titleMessages.length);
-  }, 1500)
-}, 15000);
+document.getElementById("userIP").innerHTML = useripvar
 </script>
